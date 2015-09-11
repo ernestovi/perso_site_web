@@ -6,129 +6,32 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-        <title>Luis Ernesto VILLAZON</title>
-        <meta name="description" content="Site personnel du développeur FrontEnd Luis Ernesto VILLAZON">
-        <meta name="author" content="Luis Ernesto VILLAZON">
+        <title></title>
+        <meta name="description" content="">
         <meta name="viewport" content="width=device-width">
 
-        <link rel="stylesheet" href="main.css">
+        <link rel="stylesheet" href="css/normalize.min.css">
+        <link rel="stylesheet" href="css/main.css">
 
+        <script src="js/vendor/modernizr-2.6.2-respond-1.1.0.min.js"></script>
     </head>
     <body>
         <!--[if lt IE 7]>
             <p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.</p>
         <![endif]-->
 
-        <!-- éléments cachés pour jouer avec :target -->
-        <span id="s1"></span>
-        <span id="s2"></span>
-        <span id="s3"></span>
-        <span id="s4"></span>
-        <span id="s5"></span>
+        <p>Hello world! This is HTML5 Boilerplate.</p>
 
-        <!-- Le gros conteneur qui va glisser -->
-        <content id="wrap">
+        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
+        <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.10.1.min.js"><\/script>')</script>
 
-        	<!-- La navigation -->
-          <nav>
-          	<div class="bouton_menu">
-              <div class="barrecentral"></div>
-            </div>
-          	<span>Luis Ernesto VILLAZON</span>
-        		<a href="#s1">Home</a>
-        		<a href="#s2">About</a>
-        		<a href="#s3">Compétences</a>
-        		<a href="#s4">Expériences</a>
-        		<a href="#s5">Contact</a>
-          </nav>
+        <script src="js/main.js"></script>
 
-        	<!-- La slide 1 -->
-        	<section id="slide1">
-        		<div class="slide_inside">
-        			<!-- Le logo -->
-        			<h1>Luis Ernesto VILLAZON</h1>
-              <h2>Bienvenue sur mon site</h2>
-              <p>Je suis un Développeur Front End & Intégrateur, vivant en Seine-et-Marne.</p>
-        		</div> <!-- /.slide_inside-->
-        	</section> <!-- /#slide1 -->
-
-        	<!-- La slide 2 -->
-        	<section id="slide2">
-        		<div class="slide_inside">
-        			<!-- Les deux éléments en 1er plan -->
-        			<!-- Mettez ici les images que vous voulez  :)  -->
-        			<!--
-              <img src="images/bomb-squad-trooper.png" id="trooper" alt="">
-        			<img src="images/clone.png" id="clone" alt="">
-              -->
-              <aside>
-                <img src="img/photo01.png" alt="Photo d'identité" />
-              </aside>
-              <article>
-          			<h2>About Me</h2>
-          			<p>Passionné par les nouvelles Technologies d'Informations et de Comunications, autodidact formé au développement front-end, je souhaite aujourd'hui exprimer ma créativité.</p>
-              </article>
-        		</div> <!-- /.slide_inside-->
-        	</section> <!-- /#slide2 -->
-
-        	<!-- La slide 3 -->
-        	<section id="slide3">
-        		<div class="slide_inside">
-        			<h2>Mes Compétences</h2>
-        			<p>test</p>
-              <ul>
-                <li>
-                  <h3>Code</h3>
-                  <p style="width:90%;" data-value="90">HTML 5</p>
-                  <progress name="html5" max="100" value="90"></progress>
-                  <p style="width:90%;" data-value="90">CSS 3</p>
-                  <progress name="css3" max="100" value="90"></progress>
-                  <p style="width:33%;" data-value="33">JavaScript</p>
-                  <progress name="javascript" max="100" value="33"></progress>
-                  <p style="width:50%;" data-value="50">PHP 5</p>
-                  <progress name="php5" max="100" value="50"></progress>
-                  <p style="width:50%;" data-value="50">MySQL</p>
-                  <progress name="mysql" max="100" value="50"></progress>
-                </li>
-                <li>
-                  <h3>Design</h3>
-                  <p style="width:50%;" data-value="50">Photoshop / The Gimp</p>
-                  <progress name="photoshop" max="100" value="50"></progress>
-                  <p style="width:50%;" data-value="50">InDesign / Scribe</p>
-                  <progress name="indesign" max="100" value="50"></progress>
-                  <p style="min-width:10%;" data-value="10">Illustrator / Inkscape</p>
-                  <progress name="illustrator" max="100" value="10"></progress>
-                </li>
-                <li>
-                  <h3>Autres</h3>
-                  <p style="width:75%;" data-value="75">Gestion de Projets</p>
-                  <progress name="projet" max="100" value="75"></progress>
-                  <p style="width:75%;" data-value="75">Admin. réseau SOHO</p>
-                  <progress name="soho" max="100" value="75"></progress>
-                  <p style="min-width:33%;" data-value="33">Admin. serveur Linux</p>
-                  <progress name="linux" max="100" value="33"></progress>
-                </li>
-              </ul>
-        		</div> <!-- /.slide_inside-->
-        	</section> <!--  /#slide3 -->
-
-          <!-- La slide 4 -->
-          <section id="slide4">
-            <div class="slide_inside">
-              <h2>Expériences</h2>
-              <p>test</p>
-            </div> <!-- /.slide_inside-->
-          </section> <!--  /#slide4 -->
-
-          <!-- La slide 5 -->
-          <section id="slide5">
-            <div class="slide_inside">
-              <h2>Contact</h2>
-              <p>test</p>
-            </div> <!-- /.slide_inside-->
-          </section> <!--  /#slide5 -->
-
-      </div>
-
+        <script>
+            var _gaq=[['_setAccount','UA-XXXXX-X'],['_trackPageview']];
+            (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
+            g.src='//www.google-analytics.com/ga.js';
+            s.parentNode.insertBefore(g,s)}(document,'script'));
+        </script>
     </body>
 </html>

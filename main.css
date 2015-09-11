@@ -1,360 +1,223 @@
+/* ==========================================================================
+   HTML5 Boilerplate styles - h5bp.com (generated via initializr.com)
+   ========================================================================== */
+
+html,
+button,
+input,
+select,
+textarea {
+    color: #222;
+}
+
 body {
-	margin: 0;
-	padding: 0;
+    font-size: 1em;
+    line-height: 1.4;
 }
 
-nav {
-	/* on fixe le menu en haut */
-	position: fixed;
-	top: 0; left: 0; right: 0;
-	padding: 0;
-	margin: 0;
-  min-height: 70px;
-  display: flex;
-  flex-direction: row;
-	text-align: center;
-  background-color: #1E1E1E;
-  z-index: 1;
-}
-nav span {
-  margin: auto;
-  padding: 0 0 0 30px;
-  flex: 3;
-  color: white;
-  text-align: left;
-  font-weight: bold;
-}
-nav a {
-  flex: 1;
-  margin: auto;
-  text-decoration: none;
-  color: white;
-}
-nav a:hover {
-  color: #41c476;
-  transition: all 0.3s ease-out 0s;
-}
-#s1:target ~ #wrap nav a:first-of-type, #s2:target ~ #wrap nav a:nth-of-type(2), #s3:target ~ #wrap nav a:nth-of-type(3), #s4:target ~ #wrap nav a:nth-of-type(4), #s5:target ~ #wrap nav a:last-of-type {
-  color: #41c476;
-  font-weight: bold;
+::-moz-selection {
+    background: #b3d4fc;
+    text-shadow: none;
 }
 
-
-/*** SLIDE
-***/
-
-
-/* attribution des images de fond */
-#slide1 { background: url(img/slider1_bg.jpg) center 0 no-repeat fixed; background-size: cover; }
-#slide2 { background: url(img/slider2_bg.jpg) center 0 no-repeat fixed; background-size: cover; }
-#slide3 { background: url(img/slider3_bg.jpg) center 0 no-repeat fixed; background-size: cover; }
-#slide4 { background: url(img/slider4_bg.jpg) center 0 no-repeat fixed; background-size: cover; }
-#slide5 { background: url(img/coding.png) center 0 no-repeat fixed; background-size: cover; }
-
-/* Contenus des slides */
-section div {
-	width: 100%;
-	min-height: 50%;
-	margin: 0;
-	padding: 0;
-	background-color: white;
-  color: black;
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
-	text-align: center;
-}
-section:first-of-type div {
-	background-color: transparent;
-	color: white;
-}
-section:first-of-type div h1 {
-  width: 30%;
-  margin: auto;
-  padding: 30px 0;
-	border: 2px solid white;
-  border-radius: 15px;
-}
-section:nth-of-type(n+2) div p {
-	text-align: justify;
+::selection {
+    background: #b3d4fc;
+    text-shadow: none;
 }
 
-aside {
-  float: right;
-  width: 33%;
-  text-align: center;
-}
-aside img {
-  height: 100px;
-  border-radius: 100px / 120px;
-}
-article {
-  width: 66%;
-  padding-left: 15px;
+hr {
+    display: block;
+    height: 1px;
+    border: 0;
+    border-top: 1px solid #ccc;
+    margin: 1em 0;
+    padding: 0;
 }
 
-/****** Compétences
-*******/
-section div ul {
-	margin: 0;
-	padding: 0;
-	width: 100%;
-	display: flex;
-	flex-direction: row;
-	justify-content: space-between;
-}
-section div ul li {
-	list-style: none;
-	padding: 0;
-	margin: 0 auto;
-	width: 25%;
-}
-section div ul li p {
-	margin: 0;
-	padding: 0;
-}
-progress {
-	padding: 0;
-	box-sizing: border-box;
-}
-progress[value] {
-	appearance: none;
-	-moz-appearance: progressbar;
-	-webkit-appearance: none;
-	width: 100%;
-	height: 20px;
-	border: none;
-  background-color: whiteSmoke;
-  border-radius: 3px;
-  box-shadow: 0 2px 3px rgba(0,0,0,.5) inset;
-	color: #41c476;
-	position: relative;
-	margin: 0 0 1.5em;
-}
-progress[value]::-webkit-progress-bar {
-	background-color: whiteSmoke;
-	border-radius: 3px;
-	box-shadow: 0 2px 3px rgba(0,0,0,.5) inset;
-}
-progress[value]::-webkit-progress-value {
-	position: relative;
-	background-size: 35px 20px, 100% 100%, 100% 100%;
-	border-radius:3px;
-	background-color: #41c476;/*
-	animation: animate-stripes 5s linear infinite;*/
+img {
+    vertical-align: middle;
 }
 
-/* Firefox provides a single pseudo class to style the progress element value and not for container. -moz-progress-bar */
-
-progress[value]::-moz-progress-bar:after {
-content: '';
-position: absolute;
-
-width:5px; height:5px;
-top:7px; right:7px;
-	background-color: white;
-	border-radius: 100%;
+fieldset {
+    border: 0;
+    margin: 0;
+    padding: 0;
 }
 
-progress[value]::-moz-progress-bar {
-	/* Gradient background with Stripes */
-	background-color: #41c476;
-
-	/* Firefox doesn't support CSS3 keyframe animations on progress element. Hence, we did not include animate-stripes in this code block */
+textarea {
+    resize: vertical;
 }
 
-section div p[data-value] {
-  position: relative;
-}
-/* The percentage will automatically fall in place as soon as we make the width fluid. Now making widths fluid. */
-
-section div p[data-value]:after {
-  content: attr(data-value) '%';
-  position: absolute;
-  right: 0;
+.chromeframe {
+    margin: 0.2em 0;
+    background: #ccc;
+    color: #000;
+    padding: 0.2em 0;
 }
 
 
+/* ==========================================================================
+   Author's custom styles
+   ========================================================================== */
 
-@media screen and (min-width: 900px) {
-	/*** BASE
-	***/
-	body {
-		overflow: hidden; /* on cache le débordement de contenu */
-		color: #fff;
-		background: #000;
-	}
 
-	#wrap {
-		/* position du conteneur pour le préparer à bouger */
-		position: relative;
-		top: 0;
-		/* on prépare la transition à venir */
-		transition: top 1.4s cubic-bezier(.49,.22,.52,1.35);
-	}
 
-	/* slides */
-	section {
-		/* height à adapter avec media queries */
-		min-height: 900px;
-		padding-top:100px;
-		/* préparation des transitions */
-		transition: background-position 1.4s cubic-bezier(.49,.22,.52,1.35);
-	}
-	#slide1, #slide2, #slide3, #slide4, #slide5 {
-	}
-	/*** PERSONNAGES
-	***/
-	/* positionnement des personnages animés */
-	#trooper, #clone {
-		position: absolute;
-		left:-180px; top: 300px;
-		/* on tourne légèrement les images */
-		transform: rotate(10deg);
-		/* et on prévoit une transition */
-		transition: all 1.4s cubic-bezier(.49,.22,.52,1);
-	}
-	/* positionnement différé d'un des 2 personnages */
-	#clone {
-		left: -280px;
-		top: 400px;
-	}
 
-	/*** ANIMATION
-	**/
-	/* décalage du conteneur vers le haut */
-	#s2:target ~ #wrap {
-		top:-1000px;
-	}
 
-	/* décalage des fonds de chaque slide */
-	#s2:target ~ #wrap #slide1 { background-position: 50% 25%; }
-	#s2:target ~ #wrap #slide2 { background-position: 50% 0%; }
-	#s2:target ~ #wrap #slide3 { background-position: 50% -50%; }
-	#s2:target ~ #wrap #slide4 { background-position: 50% -75%; }
-	#s2:target ~ #wrap #slide5 { background-position: 50% -100%; }
 
-	/* mouvements d'un des personnages */
-	#s2:target ~ #wrap #trooper {
-		left: -180px;
-		top: -100px;
-		transform: rotate(-7deg);
-	}
 
-	/* mouvements de l'autre personnage */
-	#s2:target ~ #wrap #clone {
-		left: -350px;
-		top: 50px;
-		transform: rotate(0deg);
-	}
 
-	/* vers Slide 1 */
-	#s1:target ~ #wrap { top:0px; }
-	#s1:target ~ #wrap #slide1 { background-position: 50% 0%; }
-	#s1:target ~ #wrap #slide2 { background-position: 50% -25%; }
-	#s1:target ~ #wrap #slide3 { background-position: 50% -50%; }
-	#s1:target ~ #wrap #slide4 { background-position: 50% -75%; }
-	#s1:target ~ #wrap #slide5 { background-position: 50% -100%; }
-	/*#s1:target ~ #wrap #trooper { left: -180px; top: 300px; transform: rotate(10deg); }
-	#s1:target ~ #wrap #clone { left: -280px; top: 300px; transform: rotate(10deg); }*/
 
-	/* vers Slide 3 */
-	#s3:target ~ #wrap { top:-2000px;  }
-	#s3:target ~ #wrap #slide1 { background-position: 50% 50%; }
-	#s3:target ~ #wrap #slide2 { background-position: 50% 25%; }
-	#s3:target ~ #wrap #slide3 { background-position: 50% 0%; }
-	#s3:target ~ #wrap #slide4 { background-position: 50% -75%; }
-	#s3:target ~ #wrap #slide5 { background-position: 50% -100%; }
 
-	/* vers Slide 4 */
-	#s4:target ~ #wrap { top:-3000px;  }
-	#s4:target ~ #wrap #slide1 { background-position: 50% 75%; }
-	#s4:target ~ #wrap #slide2 { background-position: 50% 50%; }
-	#s4:target ~ #wrap #slide3 { background-position: 50% 25%; }
-	#s4:target ~ #wrap #slide4 { background-position: 50% 0%; }
-	#s4:target ~ #wrap #slide5 { background-position: 50% -100%; }
 
-	/* vers Slide 5 */
-	#s5:target ~ #wrap { top:-4000px;  }
-	#s5:target ~ #wrap #slide1 { background-position: 50% 100%; }
-	#s5:target ~ #wrap #slide2 { background-position: 50% 75%; }
-	#s5:target ~ #wrap #slide3 { background-position: 50% 50%; }
-	#s5:target ~ #wrap #slide4 { background-position: 50% 25%; }
-	#s5:target ~ #wrap #slide5 { background-position: 50% 0%; }
+
+
+
+
+/* ==========================================================================
+   Media Queries
+   ========================================================================== */
+
+@media only screen and (min-width: 35em) {
 
 }
 
+@media print,
+       (-o-min-device-pixel-ratio: 5/4),
+       (-webkit-min-device-pixel-ratio: 1.25),
+       (min-resolution: 120dpi) {
 
-@media screen and (max-device-width: 900px) {	/* décalage du conteneur vers le haut */
-	#wrap {
-		/* position du conteneur pour le préparer à bouger */
-		position: relative;
-		top: 0;
-		/* on prépare la transition à venir */
-		transition: top 1.4s cubic-bezier(.49,.22,.52,1.35);
-	}
+}
 
-	section {
-		/* height à adapter avec media queries */
-		min-height: 500px;
-		padding-top:100px;
-	}
-	nav{
-		flex-direction: column;
-	}
-	nav a {
-		display: none;
-	}
-	nav:hover {
-		position: static;
-	}
-	nav:hover a{
-		display: block;
-	}
-	/***********bouton menu************/
-	.bouton_menu {
-	  border:1px solid #fff;
-	    border-radius:25px;
-	    height:40px;
-	    width:40px;  /**/
-			margin: auto;
-	}
-	.bouton_menu::after, .bouton_menu::before {
-	  content:'';
-	  height:1px;
-	  display:block;
-	  position:relative;
-	  background-color:#fff;
-	  top:13px;
-	  width:20px;
-		margin: auto;
-	}
-	.bouton_menu .barrecentral {
-	  height:1px;
-	  position:relative;
-	  display:block;
-	  background:#fff;
-	    top:19px;
-	    left:10px;
-	    width:20px;
-	}
-  .bouton_menu::before {
-    top:25px;
-  }
+/* ==========================================================================
+   Helper classes
+   ========================================================================== */
 
-	section:first-of-type div h1 {
-		width: 90%;
-	}
+.ir {
+    background-color: transparent;
+    border: 0;
+    overflow: hidden;
+    *text-indent: -9999px;
+}
 
-		section div ul {
-			flex-direction: column;
-		}
-		section div ul li {
-			width: 90%;
-		}
-		 #slide1 { background: url(img/slider1_bg.jpg) center 0 no-repeat; }
-#slide2 { background: url(img/slider2_bg.jpg) center 0 no-repeat; }
-#slide3 { background: url(img/slider3_bg.jpg) center 0 no-repeat; }
-#slide4 { background: url(img/slider4_bg.jpg) center 0 no-repeat; }
-#slide5 { background: url(img/coding.png) center 0 no-repeat; }
+.ir:before {
+    content: "";
+    display: block;
+    width: 0;
+    height: 150%;
+}
+
+.hidden {
+    display: none !important;
+    visibility: hidden;
+}
+
+.visuallyhidden {
+    border: 0;
+    clip: rect(0 0 0 0);
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    width: 1px;
+}
+
+.visuallyhidden.focusable:active,
+.visuallyhidden.focusable:focus {
+    clip: auto;
+    height: auto;
+    margin: 0;
+    overflow: visible;
+    position: static;
+    width: auto;
+}
+
+.invisible {
+    visibility: hidden;
+}
+
+.clearfix:before,
+.clearfix:after {
+    content: " ";
+    display: table;
+}
+
+.clearfix:after {
+    clear: both;
+}
+
+.clearfix {
+    *zoom: 1;
+}
+
+/* ==========================================================================
+   Print styles
+   ========================================================================== */
+
+@media print {
+    * {
+        background: transparent !important;
+        color: #000 !important; /* Black prints faster: h5bp.com/s */
+        box-shadow: none !important;
+        text-shadow: none !important;
+    }
+
+    a,
+    a:visited {
+        text-decoration: underline;
+    }
+
+    a[href]:after {
+        content: " (" attr(href) ")";
+    }
+
+    abbr[title]:after {
+        content: " (" attr(title) ")";
+    }
+
+    /*
+     * Don't show links for images, or javascript/internal links
+     */
+
+    .ir a:after,
+    a[href^="javascript:"]:after,
+    a[href^="#"]:after {
+        content: "";
+    }
+
+    pre,
+    blockquote {
+        border: 1px solid #999;
+        page-break-inside: avoid;
+    }
+
+    thead {
+        display: table-header-group; /* h5bp.com/t */
+    }
+
+    tr,
+    img {
+        page-break-inside: avoid;
+    }
+
+    img {
+        max-width: 100% !important;
+    }
+
+    @page {
+        margin: 0.5cm;
+    }
+
+    p,
+    h2,
+    h3 {
+        orphans: 3;
+        widows: 3;
+    }
+
+    h2,
+    h3 {
+        page-break-after: avoid;
+    }
 }
