@@ -21,7 +21,7 @@ h1 {
 }
 
 @media screen and (min-width: 900px) {
-
+/* pour les grands ecrans*/
   aside {
     width: 35%;
     height: 1139px; /*** <--- a arranger ***/
