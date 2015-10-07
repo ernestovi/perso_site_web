@@ -8,27 +8,35 @@ h1 {
 
 @media screen and (max-device-width: 500px) {
 /* pour les mobiles */
-  body {
+  body, section {
     width: 100%;
   }
-  .content {
-    display: flex;
-    flex-direction: column-reverse;
+  article {
+  padding: 10px 5px;
   }
-  section li p cite a {
-    text-align: center;
+  article h2 img {
+    margin: 0 3px;
   }
+  article li {
+    flex-direction: column;
+  }
+  article:nth-of-type(-n+2) li p:nth-child(odd) {
+    margin: 15px 0 5px 0;
+  }
+  article:nth-of-type(-n+2) li p:nth-child(even) {
+    margin: 0;
+  }
+
 }
 
-@media screen and (min-width: 900px) {
+@media screen and (min-width: 720px) {
 /* pour les grands ecrans*/
   aside {
     width: 35%;
-    height: 1139px; /*** <--- a arranger ***/
+    float: left;
   }
   aside > img {
     border: 5px solid black;
-    margin-bottom: 50px;
   }
 
   #hr {
@@ -37,18 +45,33 @@ h1 {
     margin: 50px 0;
   }
 
-  section {
-    width: 56%;
+  article {
+    width: 58%;
     float: right;
+    padding: 0 10px;
+  }
+  article h2 img {
+    margin: 0 20px 0 5px;
+  }
+  article li {
+    flex-direction: row;
+  }
+  article p {
+    margin: 0 0 15px 0;
   }
 
 }
 
 
+/*************** Section **************/
+section {
+  background-color: #41c476;
+  display: inline-block;
+}
+
   /************* Aside *****************/
 aside {
   padding: 0 20px;
-  background-color: #41c476;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -58,6 +81,7 @@ aside {
 aside > img {
   width: 200px;
   border-radius: 100px / 120px;
+  margin: 20px 0;
 }
 
 aside h2 {
@@ -73,31 +97,9 @@ aside h2 div {
 aside h3:first-of-type {
   margin: 0 0 20px 0;
   text-align: center;
-}
-aside h3:nth-of-type(1) {
   font-variant: small-caps;
   color: white;
 }
-
-aside ul {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
-aside ul:nth-of-type(1) abbr {
-  font-weight: bolder;
-  margin-right: 5px;
-}
-aside ul:nth-of-type(1) li {
-  display: flex;
-  flex-direction: row;
-  margin: 15px 0;
-}
-aside ul:nth-of-type(1) li p {
-  margin: 0 0 0 15px;
-  padding: 0;
-}
-
 aside h3 div {
   display: inline-block;
   border: 2px solid black;
@@ -108,34 +110,52 @@ aside h3 div {
   text-align: center;
 }
 
+aside address {
+  font-style: normal;
+}
+aside address p {
+  margin: 5px;
+}
+aside abbr {
+  font-weight: bolder;
+  margin-right: 10px;
+}
+aside address p a {
+  text-decoration: none;
+  color: black;
+  font-style: italic;
+}
+
 aside p {
   text-align: justify;
 }
 
-aside ul:nth-of-type(2) {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: center;
-}
-aside ul:nth-of-type(2) li {
+aside ul {
   list-style: none;
-  margin: 5px 0;
   padding: 0;
-  width: 40%;
+  margin: 0;
+  width: 100%;
+}
+aside ul li {
+  width: 49%;
+  margin: 5px 0;
+  display: inline-block;
+  text-align: center;
 }
 aside li img {
-  vertical-align: middle;
-  width: 15px;
+  vertical-align: baseline;
+  width: 13px;
+  margin: 0 5px;
 }
 
 /**************************************/
 
 
-/*************** Section **************/
-section {
+
+/************* Article ***************/
+article {
   background-color: #f3f3f3;
-  padding: 0 20px;
+  display: block;
 }
 
 article h2 img {
@@ -143,7 +163,6 @@ article h2 img {
   border-radius: 25px;
   border: 2px solid black;
   padding: 5px;
-  margin: 0 20px 0 5px;
   vertical-align: bottom;
 }
 
@@ -154,10 +173,8 @@ article ul {
 }
 article li {
   display: flex;
-  flex-direction: row;
 }
 article p {
-  margin: 0 0 15px 0;
   padding: 0;
   font-weight: bold;
 }
@@ -169,21 +186,18 @@ article:nth-of-type(-n+2) li p:nth-child(even) {
   color: #41c476;
   flex: 2;
 }
-article:nth-of-type(-n+2) li dfn, section li cite {
+article:nth-of-type(-n+2) li dfn, article li cite {
   color: black;
   font-weight: normal;
 }
 
-section article p img {
-  width: 10px;
-  margin-left: 5px;
-}
-section li p cite a {
+article li p cite a {
   text-decoration: none;
   color: grey;
   font-size: small;
+  padding-left: 10px;
 }
-section li p cite a:hover {
+article li p cite a:hover {
   color: #41c476;
 }
 
