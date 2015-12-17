@@ -1,0 +1,528 @@
+@font-face {
+    font-family: 'graph';
+    src: url('../font/Juice.ttf');
+}
+@font-face {
+    font-family: 'djb';
+    src: url('../font/DJB In a Hurry.ttf');
+}
+
+/* Hauteur automatique max + image de fond */
+body, html {
+    height: 100%;
+    background: url('../img/background.jpg') no-repeat fixed;
+    background-size: cover;
+/*    font-family: roboto*/
+}
+
+/* Marge interne/externe à 0 */
+body, html, nav, nav > *, section ul, h1 {
+    padding: 0;
+    margin: 0;
+}
+
+/* Largeur automatique max */
+body, html, header, nav, section {
+    width: 100%;
+}
+
+/* icones */
+img {
+    margin: 0 10px;
+    vertical-align: text-bottom;
+}
+
+/***** Navigation *****/
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 15;
+}
+nav {
+    height: 70px;
+    color: white;
+}
+
+nav p {
+    width: 30%;
+    height: 100%;
+    float: left;
+    color: #2ecc71;
+    text-align: center;
+    font-family: 'djb', arial, serif;
+    font-size: 3em;
+}
+nav p:first-letter {
+    font-family: 'graph', cursive, 'sans-serif';
+    text-shadow: 0 0 5px #34495e;
+}
+
+nav ul {
+    width: 70%;
+    height: 100%;
+/*    background-color: #2ecc71;*/
+    background-color: rgba(52, 73, 94,0.9);
+    list-style: none;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+nav li {
+}
+nav li a {
+    padding: 10px 25px;
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+nav li a:hover {
+    background-color: white;
+    color: #27ae60;
+    text-shadow: 0 1px 0 rgba(255, 255, 255, 0.6);
+}
+
+
+/***** Section *****/
+section {
+    box-sizing: border-box;
+    height: 100%;
+    padding-top: 70px;
+    display: flex;
+    flex-flow: column;
+}
+section:nth-of-type(n+2) {
+    background-color: white;
+}
+section article ul, section aside ul {
+    list-style: none;
+}
+
+/***** Section titrée *****/
+h1, h2, h3 {
+    text-align: center;
+}
+h1 {
+    color: #2ecc71;
+    font-size: 4em;
+    font-family: 'djb', arial, serif;
+}
+h1:first-letter {
+    font-family: 'graph', cursive, 'sans-serif';
+    text-shadow: 0 0 5px #34495e;
+}
+
+
+/***** Flêche *****/
+section article+div {
+    position: relative;
+    text-align: center;
+}
+section div img {
+    transform: rotate(90deg);
+    height: 50px;
+}
+
+
+/***** First Page : Accueil ****/
+section:first-of-type article  {
+    width: 65%;
+    max-width: 600px;
+    min-width: 350px;
+    margin: auto;
+    background-color: rgba(52, 73, 94,0.9);
+    border-radius: 10px;
+    color: white;
+    padding: 10px;
+    box-sizing: border-box;
+/*
+    display: flex;
+    flex-direction: column;
+*/
+}
+section:first-of-type article h1 {
+    font-size: 2.5em;
+    margin-bottom: 20px;
+}
+section:first-of-type article ul {
+    margin: auto;
+}
+section:first-of-type article ul li {
+    margin: 5px 0;
+}
+section:first-of-type article ul img {
+    height: 20px;
+}
+
+
+/***** 2th Page : A propos *****/
+section:nth-of-type(2) article {
+    width: 75%;
+    margin: auto;
+}
+section:nth-of-type(2) article img {
+    float: left;
+    margin-right: 50px;
+}
+
+
+/***** 3th Page : Portfolio *****/
+/* Font */
+@font-face {
+    font-family: 'bric-a-brac';
+    src: url('../font/bric-a-brac.woff') format('woff'),
+        url("../font/bric-a-brac.ttf") format("truetype"),
+        url("../font/bric-a-brac.svg#bric-a-brac") format("svg");
+    font-weight: normal;
+    font-style: normal;
+}
+[class^="icone-"]:before,[class*=" icone-"]:before {
+    font-family: "bric-a-brac";
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-decoration: none;
+    text-transform: none;
+    speak: none;
+    line-height: 1;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+section:nth-of-type(3) article {
+}
+section:nth-of-type(3) article img {
+    max-width: 100%;
+}
+section:nth-of-type(3) article input {
+    display: none; /*on cache tous les input*/
+}
+section:nth-of-type(3) article label {
+    cursor: pointer;/*on pointe toutes les balises labels (tri + ouverture-fermeture lightbox*/
+}
+
+/*liste des images*/
+.diaporama {
+    display: inline-block;
+    margin: 10px auto;
+    overflow: hidden;
+}
+
+
+.diaporama li {
+    width: 33.33%;
+    list-style: none;
+    float: left;
+    padding: 10px;
+    opacity: 1;/*on rend visible toutes les images pour pouvoir ensuite faire disparaitre certaines images avec le filtre en jouant sur l'opacite*/
+    transition: opacity .5s ease-in-out; /*transition opacite sur les images*/
+}
+
+.diaporama li img {
+    display: inline-block;
+    border: 5px solid #ccc;
+    width: 100%;
+}
+
+
+/*texte accompagnant les photos*/
+.fen:checked ~ .contenu-image .figcaption {
+    animation: effet1 .4s 1s forwards;
+    -webkit-animation: effet1 .4s 1s forwards;
+}
+@keyframes effet1 {
+    100% {opacity:1;top:0%}
+}
+@-webkit-keyframes effet1 {
+    100% {opacity:1;top:0%}
+}
+.figcaption {
+    font-size: 1rem;
+    position: absolute;
+    top: -100%;
+    color: white;
+    padding: 10px;
+    opacity: 0;
+    width: 100%;
+    height: auto;
+    background: hsla(0, 0%, 0%,.6);
+    overflow: hidden;
+}
+.interieur {
+    padding: 10px;
+    width: 100%;
+    max-height: 150px;
+    overflow-y: auto;
+    margin: 25px auto;
+}
+.interieur p{line-height:20px}
+
+.cadre-fig{
+    display: block;
+    position: relative;
+    overflow: hidden;
+}
+
+section:nth-of-type(3) article p {
+    text-align: center;
+}
+
+/*on personnalise les balises label*/
+input[type=radio] + label {
+    display: inline-block;
+    font-size: 1.2rem;
+    border-bottom: 1px solid #34495e;
+    padding: 5px 20px;
+}
+
+/*quand on clique sur une balise label pour montrer qu'il est actif*/
+input[type=radio]:checked + label {
+    color: white;
+    background: #34495e;
+}
+
+	
+/*filtre*/
+#images:checked ~ .diaporama li:not(.images), 
+/*#paysages:checked ~ .diaporama li:not(.paysages), */
+#web:checked ~ .diaporama li:not(.web) {
+    opacity: .1; /*ici on indique que les images non selectionnees (li:not) par le filtre ne seront presque plus visibles*/
+}
+
+#images:checked ~ .diaporama li:not(.images) label, 
+#web:checked ~ .diaporama li:not(.web) label,
+/*#paysages:checked ~ .diaporama li:not(.paysages) label*/ {
+    display: none; /*ici on indique qu'on fait disparaitre l'agrandissement des images sur les images non selectionnees : on ne pourra donc pas cliquer sur la loupe quand une image n'est pas selectionnee*/
+}
+
+
+/*nombre de photos*/
+/*
+input[type=radio]:checked + label:after {
+    content: '(2)';
+    padding-left: 5px;
+}
+*/
+#images:checked + label:after {
+    content: '(2)';
+    padding-left: 5px;
+}
+#web:checked + label:after {
+    content: '(0)';
+    padding-left: 5px;
+}
+#tout:checked + label:after {
+    content:'(2)';
+    padding-left:5px;
+}
+
+.fenetre, .opaque {
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+}
+
+/*croix fermer lightbox*/
+.ferm:before {
+    font-size: 32px;
+    color: white;
+    content: "*";
+    font-family: 'bric-a-brac';
+    visibility: hidden;
+    opacity: 0;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+}
+
+.fen:checked~.contenu-image {
+    transition: .6s cubic-bezier(.77,0,.175,1);
+    opacity: 1;
+    z-index: 1;
+    -webkit-transform: scale(1);
+    -ms-transform: scale(1);
+    transform: scale(1); /*=display:block*/
+}
+
+.fen:checked~.opaque {
+    bottom: 0;
+    opacity: 1;
+    z-index: 0;
+}
+
+.contenu-image img {
+    outline: 1px solid transparent;
+    object-fit: contain;
+    height: 98vh;
+    margin-top: 1vh;
+}
+
+.fen:checked + .ferm:before {
+    visibility: visible;
+    opacity: 1;
+    z-index: 2;
+}
+
+.contenu-image { 
+    transition: .2s cubic-bezier(.77,0,.175,1);
+    width: 100%;
+    position: absolute;
+    opacity: 0;
+    -webkit-transform: scale(0);
+    -ms-transform: scale(0);
+    transform: scale(0);  /*=display:none*/
+}
+
+.opaque {
+    opacity: 0;
+    right: 0;
+    bottom: 100%;
+    background: hsla(0,0%,0%,.6);
+    transition: .3s opacity ease-in-out;
+}
+
+.diaporama label:before, .diaporama figcaption:before { /* Loupe */
+    position: absolute;
+    padding: 10px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    -webkit-transform: translate(-50%,-50%);
+    -ms-transform: translate(-50%,-50%);
+    color: white;
+    border-radius: 50%;
+    background: hsla(0,0%,0%,.4);
+    content: "\e045";
+    font-family: 'bric-a-brac';
+}
+/*
+
+@media screen and (max-width:25em) {
+    .diaporama label:before,input[type=radio] + label,h2 {
+        font-size: 75%;
+    }
+    input[type=radio] + label,.diaporama li img {
+        width: 100%;
+    }
+    input[type=radio] + label {
+        margin-top: 10px;
+    }
+    .diaporama label:before {
+        padding: 5px;
+    }
+}
+*/
+
+
+/***** 4th Page : XP-Formation *****/
+section:nth-of-type(4) div {
+    margin: auto;
+}
+
+
+
+/***** 5th page : skill *****/
+section:nth-of-type(5) ul {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+section:nth-of-type(5) ul li {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    display: flex;
+}
+section:nth-of-type(5) ul li * {
+    flex: 1;
+    margin-bottom: 10px;
+}
+section:nth-of-type(5) ul li p {
+    text-align: right;
+    padding-right: 10px;
+}
+section:nth-of-type(5) ul li meter {
+    height: 20px;
+    margin-right: 25%;
+}
+
+
+meter {
+    background: none; /*** Meter Firefox reset ***/
+    -webkit-appearance: none; /*** Meter Webkit reset ***/
+    margin: auto;
+    background: #34495e;
+}
+:-moz-meter-optimum::-moz-meter-bar { /*** Meter Firefox couleur optimum ***/
+    background: #2ecc71;
+}
+:-moz-meter-sub-optimum::-moz-meter-bar { /*** Meter Firefox couleur moyenne ***/
+    background: #f1c40f;
+}
+:-moz-meter-sub-sub-optimum::-moz-meter-bar { /*** Meter Firefox couleur faible ***/
+    background: #e74c3c;
+}
+meter::-webkit-meter-optimum-value { /*** Meter Webkit couleur optimum ***/
+    background: #2ecc71;
+}
+meter::-webkit-meter-suboptimum-value { /*** Meter Webkit couleur moyenne ***/
+    background: #f1c40f;
+}
+meter::-webkit-meter-even-less-good-value { /*** Meter Webkit couleur faible ***/
+    background: #e74c3c;
+}
+
+
+/***** 6th Page : Contact *****/
+section:nth-of-type(6) {
+    flex-flow: row wrap;
+}
+section:nth-of-type(6) > * {
+    flex: 1 100%;
+}
+iframe {
+    height: 250px;
+}
+section:nth-of-type(6) article {
+    flex: 66%;
+}
+section:nth-of-type(6) article form {
+    display: flex;
+    flex-flow: row wrap;
+}
+section:nth-of-type(6) aside {
+    flex: 33%;
+}
+section:nth-of-type(6) p {
+    flex: 1 50%;
+    display: flex;
+}
+section:nth-of-type(6) p > input {
+    flex: 1;
+    border-radius: 0 2px 2px 0;
+    border-left: 0px none;
+	border: 1px solid rgba(147, 128, 108, 0.25);
+	padding: 0.5em 0.75em;
+}
+section:nth-of-type(6) p > label {
+    width: 24px;
+    padding-left: 24px;
+    box-sizing: border-box;
+    overflow: hidden;
+    background: url(../img/woman.png);
+}
+
+
+
+/*** responsive ***/
+@keyframe (device) {
+}
+
+
+/***** footer *****/
+footer p {
+	text-align: center;
+}

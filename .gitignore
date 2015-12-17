@@ -17,6 +17,16 @@ $RECYCLE.BIN/
 # Windows shortcuts
 *.lnk
 
+# img
+*.ai
+*.psd
+
+# JS
+/js/visjs
+
+# Test font
+/font/index.html
+
 # =========================
 # Operating System Files
 # =========================
